@@ -1,7 +1,7 @@
 # htb-pwnbox-ansible
 
-Ansible playbook to configure a Parrot Mate host to be as similar to HackTheBox.eu's pwnbox as possible.
-
+Anisble playbook to configure a Parrot VM similarly to the HackTheBox.eu's pwnbox.
+    
 Installs most of the packages installed on HTB's pwnbox by default, though not all (some are not in standard  package repositories). Sets up pre-installed pwnbox tools in /opt (e.g, Postman, pycharm-community, etc). Sets up passwordless sudo, and configure's the HTB visual theme.
 
 [![htb-pwnbox-ansible](https://i.imgur.com/Udsh2Cp.png "htb-pwnbox-ansible")](https://i.imgur.com/Udsh2Cp.png "htb-pwnbox-ansible")
