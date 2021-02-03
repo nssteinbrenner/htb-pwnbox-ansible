@@ -30,7 +30,7 @@ Or, you can change the --tags parameter to any of the following to only run indi
 - `setup-misctools` - Sets up Postman, pycharm and websockify in /opt. You can also install these three individually with `setup-postman`, `setup-pycharm`, and `setup-websockify` respectively.
 - `setup-system` - This just modifies the sudoer's file so that members of the sudo group can run sudo without a password. Also adds your user to the sudo group if they are not already in it.
 - `setup-repos` - Clones the repos that live under /opt/useful on HTB's pwnbox (SecLists, privilege-esclation-awesome-scripts-suite, PayloadsAllTheThings, linuxprivchecker)
-- `setup-packages` - Runs `parrot-upgrade` then installs the packages that are installed on HTB's pwnbox by default. **Note**: `parrot-upgrade` took forever (multiple hours) on my VM after a fresh install from the Parrot Mate Security ISO. Your mileage may vary.
+- `setup-packages` - Runs the ansible equivalent of `apt update` and `apt full-upgrade` then installs the packages that are installed on HTB's pwnbox by default. **Note**: This took forever (multiple hours) on my VM after a fresh install from the Parrot Mate Security ISO. Your mileage may vary.
 
 ## Contributing
 I've never used Ansible, and probably did things poorly or sub-optimally. If you'd like to improve this, it is very much appreciated.

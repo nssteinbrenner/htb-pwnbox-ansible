@@ -1,2 +1,4 @@
 - name: Update packages
-  ansible.builtin.shell: parrot-upgrade
+  ansible.builtin.apt:
+    update-cache: yes
+    upgrade: full
