@@ -1,0 +1,11 @@
+---
+- name: "Set up pwnbox hosts"
+  hosts: "{{ target if target is defined else 'pwnbox_hosts' }}"
+  become: true
+
+  roles:
+    - packages
+    - repositories
+    - misctools
+    - hackthebox
+    - system

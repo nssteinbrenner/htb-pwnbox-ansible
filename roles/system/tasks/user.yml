@@ -1,0 +1,13 @@
+- name: Allow passwordless sudo for sudo group
+  ansible.builtin.template:
+    src: "{{ role_path }}/templates/sudoers.j2"
+    dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: '0640'
+
+- name: Add user to sudo group
+  ansible.builtin.user:
+    append: yes
+    name: "{{ pwnbox_user }}"
+    groups: "{{ sudo_group }}"

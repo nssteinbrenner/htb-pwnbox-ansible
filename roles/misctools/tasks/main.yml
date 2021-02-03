@@ -1,0 +1,17 @@
+- import_tasks: "{{ role_path }}/tasks/postman.yml"
+  tags:
+    - setup-all
+    - setup-misctools
+    - setup-postman
+
+- import_tasks: "{{ role_path }}/tasks/pycharm-community.yml"
+  tags:
+    - setup-all
+    - setup-misctools
+    - setup-pycharm-community
+
+- import_tasks: "{{ role_path }}/tasks/websockify.yml"
+  tags:
+    - setup-all
+    - setup-misctools
+    - setup-websockify

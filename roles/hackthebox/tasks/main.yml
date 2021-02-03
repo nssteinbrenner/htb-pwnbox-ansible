@@ -1,0 +1,10 @@
+- import_tasks: "{{ role_path }}/tasks/hackthebox.yml"
+  tags:
+    - setup-all
+    - setup-htb
+    - setup-htb-user
+
+- import_tasks: "{{ role_path }}/tasks/user.yml"
+  tags:
+    - setup-all
+    - setup-htb-user

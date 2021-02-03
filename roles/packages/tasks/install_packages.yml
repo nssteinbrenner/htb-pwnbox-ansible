@@ -1,0 +1,15 @@
+- name: Add Sublime Text key 
+  ansible.builtin.apt_key:
+    url: https://download.sublimetext.com/sublimehq-pub.gpg
+    state: present
+
+- name: Add Sublime Text repository
+  ansible.builtin.apt_repository:
+    repo: deb https://download.sublimetext.com/ apt/stable/
+    state: present
+
+- name: Install packages
+  ansible.builtin.apt:
+    name: "{{ htb_default_packages }}"
+    state: latest
+    update_cache: yes

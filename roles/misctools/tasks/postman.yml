@@ -1,0 +1,29 @@
+- name: Download postman
+  ansible.builtin.get_url:
+    url: "{{ postman_url }}"
+    dest: /tmp/postman.gz
+
+- name: Extract postman
+  ansible.builtin.unarchive:
+    remote_src: yes
+    src: /tmp/postman.gz
+    dest: /tmp
+
+- name: Copy postman to /opt
+  ansible.builtin.copy:
+    remote_src: yes
+    src: "/tmp/{{ postman_extracted_directory }}/"
+    dest: /opt/Postman
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Cleanup postman.gz from /tmp
+  file:
+    state: absent
+    path: /tmp/postman.gz
+
+- name: Cleanup postman directory from /tmp
+  file:
+    state: absent
+    path: "/tmp/{{ postman_extracted_directory }}"

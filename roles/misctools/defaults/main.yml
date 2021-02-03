@@ -1,0 +1,8 @@
+postman_url: https://dl.pstmn.io/download/latest/linux64
+postman_extracted_directory: Postman
+
+pycharm_url: https://download.jetbrains.com/python/pycharm-community-2020.3.3.tar.gz
+pycharm_extracted_directory: pycharm-community-2020.3.3
+
+websockify_url: https://github.com/novnc/websockify/archive/v0.9.0.tar.gz
+websockify_extracted_directory: websockify-0.9.0

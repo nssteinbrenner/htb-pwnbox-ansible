@@ -1,0 +1,76 @@
+- name: Clone HTB pwnbox customizations
+  ansible.builtin.git:
+    repo: "{{ htb_pwnbox_repo }}"
+    dest: /tmp/htb-pwnbox
+
+- name: Copy to /etc/skel
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/skel/
+    dest: /etc/skel
+    owner: root
+    group: root
+    mode: '0755'
+    force: yes
+
+- name: Copy to /opt
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/opt/
+    dest: /opt
+    owner: root
+    group: root
+    mode: '0755'
+    force: yes
+
+- name: Copy to /usr/share/icons
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/icons/
+    dest: /usr/share/icons
+    owner: root
+    group: root
+    force: yes
+
+- name: Copy to /usr/share/applications
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/applications/
+    dest: /usr/share/applications
+    owner: root
+    group: root
+    force: yes
+    mode: '0755'
+
+- name: Copy to /usr/share/backgrounds
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/backgrounds/
+    dest: /usr/share/backgrounds
+    owner: root
+    group: root
+    force: yes
+    mode: '0755'
+
+- name: Copy to /usr/share/themes
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/icons/
+    dest: /usr/share/icons
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Copy dconf configuration to /opt
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /tmp/htb-pwnbox/htb-desktop-user.conf
+    dest: /opt/htb-desktop-user.conf
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Cleanup repo
+  ansible.builtin.file:
+    path: /tmp/htb-pwnbox
+    state: absent

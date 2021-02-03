@@ -1,0 +1,5 @@
+repos:
+  privilege-escalation-awesome-scripts-suite: https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
+  PayloadsAllTheThings: https://github.com/swisskyrepo/PayloadsAllTheThings.git
+  SecLists: https://github.com/danielmiessler/SecLists.git
+  linuxprivchecker: https://github.com/sleventyeleven/linuxprivchecker.git

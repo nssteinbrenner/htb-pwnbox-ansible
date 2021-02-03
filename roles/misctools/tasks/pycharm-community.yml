@@ -1,0 +1,29 @@
+- name: Download pycharm
+  ansible.builtin.get_url:
+    url: "{{ pycharm_url}}"
+    dest: /tmp/pycharm-community.gz
+
+- name: Extract pycharm
+  ansible.builtin.unarchive:
+    remote_src: yes
+    src: /tmp/pycharm-community.gz
+    dest: /tmp
+
+- name: Copy pycharm to /opt
+  ansible.builtin.copy:
+    remote_src: yes
+    src: "/tmp/{{ pycharm_extracted_directory }}/"
+    dest: /opt/pycharm-community
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Cleanup pycharm-community.gz from /tmp
+  file:
+    state: absent
+    path: /tmp/pycharm-community.gz
+
+- name: Cleanup pycharm-community directory from /tmp
+  file:
+    state: absent
+    path: "/tmp/{{ pycharm_extracted_directory }}"

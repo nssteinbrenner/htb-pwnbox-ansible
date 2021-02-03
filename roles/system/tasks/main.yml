@@ -1,0 +1,4 @@
+- import_tasks: "{{ role_path }}/tasks/user.yml"
+  tags:
+    - setup-all
+    - setup-system-user

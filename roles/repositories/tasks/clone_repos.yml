@@ -1,0 +1,8 @@
+- name: Create /opt/useful
+  file: path=/opt/useful state=directory
+
+- name: Clone repos
+  ansible.builtin.git:
+    repo: "{{ item.value }}"
+    dest: "/opt/useful/{{ item.key }}"
+  loop: "{{ repos | dict2items }}"

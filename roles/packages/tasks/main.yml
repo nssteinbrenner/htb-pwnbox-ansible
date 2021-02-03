@@ -1,0 +1,10 @@
+- import_tasks: "{{ role_path }}/tasks/update_packages.yml"
+  tags:
+    - setup-all
+    - setup-packages
+
+- import_tasks: "{{ role_path }}/tasks/install_packages.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-packages-no-upgrade

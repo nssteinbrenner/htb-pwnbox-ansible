@@ -1,0 +1,27 @@
+- name: Copy /etc/skel to user's homedir
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /etc/skel/
+    dest: "/home/{{ pwnbox_user }}"
+    owner: "{{ pwnbox_user }}"
+    group: "{{ pwnbox_user_group }}"
+    force: yes
+
+- name: Load hackthebox dconf for user
+  become: true
+  become_user: "{{ pwnbox_user }}"
+  ansible.builtin.shell: dbus-launch dconf load / < /opt/htb-desktop-user.conf
+
+- name: Copy /etc/skel to root's homedir
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /etc/skel/
+    dest: /root
+    owner: root
+    group: root
+    force: yes
+
+- name: Load hackthebox dconf for root
+  become: true
+  become_user: root
+  ansible.builtin.shell: dbus-launch dconf load / < /opt/htb-desktop-user.conf

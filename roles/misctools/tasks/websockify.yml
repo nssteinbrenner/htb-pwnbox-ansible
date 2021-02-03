@@ -1,0 +1,29 @@
+- name: Download websockify
+  ansible.builtin.get_url:
+    url: "{{ websockify_url }}"
+    dest: /tmp/websockify.gz
+
+- name: Extract websockify
+  ansible.builtin.unarchive:
+    remote_src: yes
+    src: /tmp/websockify.gz
+    dest: /tmp
+
+- name: Copy websockify to /opt
+  ansible.builtin.copy:
+    remote_src: yes
+    src: "/tmp/{{ websockify_extracted_directory }}/"
+    dest: /opt/websockify
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Cleanup websockify.gz from /tmp
+  file:
+    state: absent
+    path: /tmp/websockify.gz
+
+- name: Cleanup websockify directory from /tmp
+  file:
+    state: absent
+    path: "/tmp/{{ websockify_extracted_directory }}"
