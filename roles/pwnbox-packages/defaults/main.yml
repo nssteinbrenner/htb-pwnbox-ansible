@@ -2,19 +2,13 @@ pwnbox_pentesting_tools_packages:
   - bloodhound
   - burpsuite
   - crackmapexec
-  - dirbuster
   - exploitdb
-  - git
   - gobuster
-  - smbmap
   - wfuzz
   - ffuf
-  - wpscan
   - netcat
   - nikto
   - nishang
-  - joomscan
-  - powersploit
 pwnbox_desktop_packages:
   - adapta-gtk-theme
   - plank
@@ -24,6 +18,7 @@ pwnbox_python_packages:
   - python3
   - virtualenv
 pwnbox_utility_packages:
+  - most
   - vim
   - neovim
   - powershell
@@ -35,8 +30,8 @@ pwnbox_utility_packages:
   - gnupg2
   - codium
   - gimp
+  - git
 pwnbox_misc_packages:
-  - most
   - lolcat
   - unscd
   - audacity
