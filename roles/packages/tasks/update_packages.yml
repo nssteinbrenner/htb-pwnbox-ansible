@@ -1,4 +1,0 @@
-- name: Update packages
-  ansible.builtin.apt:
-    update-cache: yes
-    upgrade: full

@@ -1,0 +1,5 @@
+- name: Install misc packages
+  ansible.builtin.apt:
+    name: "{{ pwnbox_misc_packages }}"
+    state: latest
+    update_cache: yes

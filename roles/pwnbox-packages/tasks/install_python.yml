@@ -1,0 +1,5 @@
+- name: Install python packages
+  ansible.builtin.apt:
+    name: "{{ pwnbox_python_packages }}"
+    state: latest
+    update_cache: yes

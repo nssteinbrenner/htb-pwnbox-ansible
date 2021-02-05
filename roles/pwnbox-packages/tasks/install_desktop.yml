@@ -1,0 +1,5 @@
+- name: Install desktop packages
+  ansible.builtin.apt:
+    name: "{{ pwnbox_desktop_packages }}"
+    state: latest
+    update_cache: yes

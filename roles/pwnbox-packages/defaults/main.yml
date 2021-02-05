@@ -1,0 +1,47 @@
+pwnbox_pentesting_tools_packages:
+  - bloodhound
+  - burpsuite
+  - crackmapexec
+  - dirbuster
+  - exploitdb
+  - git
+  - gobuster
+  - smbmap
+  - wfuzz
+  - ffuf
+  - wpscan
+  - netcat
+  - nikto
+  - nishang
+  - joomscan
+  - powersploit
+pwnbox_desktop_packages:
+  - adapta-gtk-theme
+  - plank
+pwnbox_python_packages:
+  - python2.7
+  - python3-pip
+  - python3
+  - virtualenv
+pwnbox_utility_packages:
+  - vim
+  - neovim
+  - powershell
+  - golang
+  - ftp
+  - tmux
+  - smbclient
+  - sublime-text
+  - gnupg2
+  - codium
+  - gimp
+pwnbox_misc_packages:
+  - most
+  - lolcat
+  - unscd
+  - audacity
+  - ifenslave
+  - kbd
+pwnbox_parrot_bundle_packages:
+  - parrot-interface
+  - parrot-tools-cloud

@@ -4,8 +4,8 @@
   become: true
 
   roles:
-    - packages
-    - repositories
-    - misctools
-    - hackthebox
-    - system
+    - pwnbox-packages
+    - pwnbox-theme
+    - pwnbox-misctools
+    - pwnbox-theme
+    - pwnbox-system

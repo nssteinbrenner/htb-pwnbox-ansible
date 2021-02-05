@@ -1,0 +1,35 @@
+- import_tasks: "{{ role_path }}/tasks/install_desktop.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-desktop-packages
+
+- import_tasks: "{{ role_path }}/tasks/install_misc.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-misc-packages
+
+- import_tasks: "{{ role_path }}/tasks/install_parrot_bundles.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-parrot-bundle-packages
+
+- import_tasks: "{{ role_path }}/tasks/install_pentesting_tools.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-pentesting-tool-packages
+
+- import_tasks: "{{ role_path }}/tasks/install_python.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-python-packages
+
+- import_tasks: "{{ role_path }}/tasks/install_utilities.yml"
+  tags:
+    - setup-all
+    - setup-packages
+    - setup-utility-packages

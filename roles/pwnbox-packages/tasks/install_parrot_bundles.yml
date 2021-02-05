@@ -1,0 +1,5 @@
+- name: Install parrot bundle packages
+  ansible.builtin.apt:
+    name: "{{ pwnbox_parrot_bundle_packages }}"
+    state: latest
+    update_cache: yes
